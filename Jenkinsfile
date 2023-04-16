@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Build Jar') {
             steps {
+                sh 'export PATH=/opt/apache-maven-3.8.6/bin:$PATH'
                 sh 'mvn clean package -DskipTests'
             }
         }
